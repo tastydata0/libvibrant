@@ -109,7 +109,7 @@ vibrant_errors vibrant_instance_new(vibrant_instance **instance,
   bool dpy_has_nvidia = XNVCTRLQueryExtension(dpy, NULL, NULL);
 
   Window root = DefaultRootWindow(dpy);
-  XRRScreenResources *resources = XRRGetScreenResources(dpy, root);
+  XRRScreenResources *resources = XRRGetScreenResourcesCurrent(dpy, root);
 
   vibrant_controller *controllers =
       malloc(sizeof(vibrant_controller) * resources->noutput);
